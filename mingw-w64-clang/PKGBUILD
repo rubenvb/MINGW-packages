@@ -31,7 +31,7 @@ pkgname=("${MINGW_PACKAGE_PREFIX}-${_realname}"
          "${MINGW_PACKAGE_PREFIX}-llvm"
          "${MINGW_PACKAGE_PREFIX}-polly")
 pkgver=9.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="C language family frontend for LLVM (mingw-w64)"
 arch=('any')
 url="https://llvm.org/"
@@ -306,7 +306,8 @@ build() {
     -DCLANG_ANALYZER_BUILD_Z3=ON \
     -DLIBCLANG_BUILD_STATIC=ON \
     -DLIBCXX_ENABLE_SHARED=OFF \
-    -DLIBCXX_ENABLE_EXPERIMENTAL_LIBRARY=OFF \
+    -DLIBCXX_ENABLE_EXPERIMENTAL_LIBRARY=ON \
+    -DENABLE_FILESYSTEM=ON \
     -DLIBCXX_HAS_WIN32_THREAD_API=ON \
     -DLIBCXXABI_ENABLE_SHARED=OFF \
     -DLIBUNWIND_ENABLE_SHARED=OFF \
